@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.2rem;
+}
+
+.enter-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.enter-form .button-place {
+  display: flex;
+  justify-content: justify-between;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.enter-form .urlInput-place {
+  display: flex;
+  justify-content: stretch;
+  width: 100%;
+  ;
+}
+
+.wrapper .head-word {
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
