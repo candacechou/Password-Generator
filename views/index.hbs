@@ -1,0 +1,73 @@
+<div class="title">
+  <h3>
+    <span>Random Password Generator</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key"
+      viewBox="0 0 16 16">
+      <path
+        d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z" />
+      <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+    </svg>
+  </h3>
+</div>
+<form action="/" method="POST">
+
+  {{!-- length --}}
+  <div class="label">
+    <label for="length" class="space">Password Length*</label>
+    <div styles="justify-content:between">
+      <input type="number" name="length" id="length" min="4" max="16" value="{{option.length}}">
+    </div>
+  </div>
+
+
+  {{!-- include lower case letter --}}
+  <div class="label">
+    <label for="uppercase">Include Lowercases Characters</label>
+    <div>
+      <input type="checkbox" name="lowercase" id="uppercase" {{#if option.lowercase}}checked{{/if}}> (e.g. abcde)
+    </div>
+  </div>
+  {{!-- include capital letters --}}
+  <div class="label">
+    <label for="uppercase">Include Uppercase Characters</label>
+    <div>
+      <input type="checkbox" name="uppercase" id="uppercase" {{#if option.uppercase}}checked{{/if}}> (e.g. ABCDE)
+    </div>
+  </div>
+  {{!-- include numbers --}}
+  <div class="label">
+    <label for="uppercase">Include Numbers</label>
+    <div>
+      <input type="checkbox" name="number" id="number" {{#if option.number}}checked{{/if}}> (e.g. 12345)
+    </div>
+  </div>
+  {{!-- include symbols --}}
+  <div class="label">
+    <label for="symbols">Include Symbols</label>
+    <div>
+      <input type="checkbox" name="symbols" id="symbols" {{#if option.symbol}}checked{{/if}}> (e.g. !@#$%)
+    </div>
+  </div>
+  {{!-- exclude special charactors --}}
+  <div class="label">
+    <label for="exclude">Excluded Characters**</label>
+    <div class="have_small" style="justify-content:between">
+      <input type="text" name="exclude" id="exclude" value="{{option.exclude}}">
+    </div>
+  </div>
+  <div>
+    <small class="small" style="font-size: 14px;">* Length is availabe between 4 ~ 16.</small>
+  </div>
+  <div>
+    <small class="small" style="font-size: 14px;">** These characters will not appear in the
+      password</small>
+  </div>
+  {{#if password}}
+  <div class="password">
+    <div>
+      Your Password: <code id="code">{{password}}</code>
+    </div>
+  </div>
+  {{/if}}
+</form>
+<button type="submit"> Generate Password</button>
