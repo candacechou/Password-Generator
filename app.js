@@ -12,7 +12,6 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.get('/', (req, res) => {
-  console.log('!')
   res.render('index')
 })
 app.post('/', (req, res) => {
