@@ -1,5 +1,11 @@
 # PasswordGenerator
 This is a project on password generator !
+In this project, four functions are included:
+
+1. Users can adjust the length of the generated password.
+2. sers can choose whether the generated password includes uppercase letters, lowercase letters, numbers, and symbols.
+3. Users can choose which characters should not appear in the generated password.
+4. Preserve the user-entered data in the form.
 
 
 ## Installation 
@@ -15,23 +21,23 @@ $ git clone https://github.com/candacechou/PasswordGenerator.git
 $ cd PasswordGenerator
 ```
 
-3. Install Express via npm
+3. Install via npm
 
 ```
-PasswordGenerator/ $  npm i express
+PasswordGenerator/ $  npm install
 ```
-4. Install Express handler
-```
-URL_shortener/ $ npm i express-handlebars
-```
-5. raise the app.js via nodemon
+4. raise the app.js via nodemon
 
 ```
 URL_shortener/ $  npm run dev 
 ```
 
-6. to stop :
+5. to stop :
 
 ```
 URL_shortener/ $ CTRL+C
 ```
+
+## Tools
+- Backend: Node.js,express.js,express-handlebars
+- Frontend: CSS, HTML, Javascript,Bootstraps

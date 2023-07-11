@@ -9,65 +9,70 @@
     </svg>
   </h3>
 </div>
+
 <form action="/" method="POST">
 
   {{!-- length --}}
   <div class="label">
-    <label for="length" class="space">Password Length*</label>
+    <label for="length" class="space">Password Length</label>
     <div styles="justify-content:between">
       <input type="number" name="length" id="length" min="4" max="16" value="{{option.length}}">
+      <small class="small" style="font-size: 14px;">Length is available between 4 ~ 16.</small>
+
     </div>
   </div>
-
-
-  {{!-- include lower case letter --}}
+  {{!--include lower case letter--}}
   <div class="label">
-    <label for="uppercase">Include Lowercases Characters</label>
+    <label for="lowercase">Include Lowercases Characters</label>
     <div>
-      <input type="checkbox" name="lowercase" id="uppercase" {{#if option.lowercase}}checked{{/if}}> (e.g. abcde)
+      <input type="checkbox" name="lowercase" id="lowercase" {{#if option.lowercase}}checked{{/if}}>
+      (e.g. abcde)
     </div>
   </div>
-  {{!-- include capital letters --}}
+  {{!--include capital letters--}}
   <div class="label">
     <label for="uppercase">Include Uppercase Characters</label>
     <div>
-      <input type="checkbox" name="uppercase" id="uppercase" {{#if option.uppercase}}checked{{/if}}> (e.g. ABCDE)
+      <input type="checkbox" name="uppercase" id="uppercase" {{#if option.uppercase}}checked{{/if}}>
+      (e.g. ABCDE)
     </div>
   </div>
-  {{!-- include numbers --}}
+  {{!--include numbers--}}
   <div class="label">
-    <label for="uppercase">Include Numbers</label>
+    <label for="numbersymbols">Include Numbers</label>
     <div>
-      <input type="checkbox" name="number" id="number" {{#if option.number}}checked{{/if}}> (e.g. 12345)
+      <input type="checkbox" name="numbersymbols" id="numbersymbols" {{#if option.numbersymbols}}checked{{/if}}>
+      (e.g. 12345)
     </div>
   </div>
-  {{!-- include symbols --}}
+  {{!--include symbols--}}
   <div class="label">
     <label for="symbols">Include Symbols</label>
     <div>
-      <input type="checkbox" name="symbols" id="symbols" {{#if option.symbol}}checked{{/if}}> (e.g. !@#$%)
+      <input type="checkbox" name="symbols" id="symbols" {{#if option.symbols}}checked{{/if}}> (e.g. !@#$%)
     </div>
   </div>
-  {{!-- exclude special charactors --}}
+  {{!--exclude special charactors--}}
   <div class="label">
-    <label for="exclude">Excluded Characters**</label>
+    <label for="exclude">Excluded Characters</label>
     <div class="have_small" style="justify-content:between">
       <input type="text" name="exclude" id="exclude" value="{{option.exclude}}">
     </div>
   </div>
+  <small class="small" style="font-size: 14px;">These characters will not appear in the
+    password</small>
   <div>
-    <small class="small" style="font-size: 14px;">* Length is availabe between 4 ~ 16.</small>
-  </div>
-  <div>
-    <small class="small" style="font-size: 14px;">** These characters will not appear in the
-      password</small>
-  </div>
-  {{#if password}}
+
+    <div style="margin-top: 3%;margin-bottom: 3%;">
+      <button type="submit" class="submit btn btn-success" name="status"> Generate Password</button>
+</form>
+</div>
+
+<div class="password-container"
+  style="margin: 5% 5% 3% 3%; background-color:#c1dfec;padding-bottom: 10px;padding-top: 10px;padding-left: 5%;">
+  {{#if password }}
   <div class="password">
-    <div>
-      Your Password: <code id="code">{{password}}</code>
-    </div>
+    <span> Your Password: </span> <code id="code">{{ password }}</code>
   </div>
   {{/if}}
-</form>
-<button type="submit"> Generate Password</button>
+</div>
