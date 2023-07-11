@@ -7,7 +7,7 @@ In this project, four functions are included:
 3. Users can choose which characters should not appear in the generated password.
 4. Preserve the user-entered data in the form.
 
-
+![search page](./images/passwordgenerator.png)
 ## Installation 
 1. Clone this repository.
 
